@@ -1,7 +1,12 @@
 package ua.edu.ucu.smartarr;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 abstract class SmartArrayDecorator<T> implements SmartArray<T> {
-    protected Object[] array;
+    @Setter(AccessLevel.PROTECTED)
+    private Object[] array;
 
     @Override
     public Object[] toArray() {

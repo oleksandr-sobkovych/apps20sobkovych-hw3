@@ -10,7 +10,7 @@ public class DistinctDecorator<T> extends SmartArrayDecorator<T> {
     public DistinctDecorator(SmartArray<T> smartArray) {
         HashSet<Object> hashSet = new LinkedHashSet<>(
                 Arrays.asList(smartArray.toArray()));
-        this.array = hashSet.toArray();
+        setArray(hashSet.toArray());
     }
 
     @Override
