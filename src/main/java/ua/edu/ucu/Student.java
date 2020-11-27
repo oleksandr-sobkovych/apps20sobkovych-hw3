@@ -1,9 +1,10 @@
 package ua.edu.ucu;
 
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
-@Getter
+@Getter @EqualsAndHashCode
 class Student {
     private final double GPA;
     private final int year;
