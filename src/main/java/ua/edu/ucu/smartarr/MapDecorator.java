@@ -8,8 +8,8 @@ import java.util.Arrays;
 public class MapDecorator<T> extends SmartArrayDecorator<T> {
 
     public MapDecorator(SmartArray<T> smartArray, MyFunction func) {
-        super(smartArray);
-        this.array = Arrays.stream(smartArray.toArray()).map(func::apply).toArray();
+        this.array = Arrays.stream(
+                smartArray.toArray()).map(func::apply).toArray();
     }
 
     @Override

@@ -8,8 +8,8 @@ import java.util.Arrays;
 public class SortDecorator<T> extends SmartArrayDecorator<T> {
 
     public SortDecorator(SmartArray<T> smartArray, MyComparator cmp) {
-        super(smartArray);
-        this.array = Arrays.stream(smartArray.toArray()).sorted(cmp).toArray();
+        this.array = Arrays.stream(
+                smartArray.toArray()).sorted(cmp).toArray();
     }
 
     @Override

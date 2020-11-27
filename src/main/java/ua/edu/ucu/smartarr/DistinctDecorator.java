@@ -8,8 +8,8 @@ import java.util.LinkedHashSet;
 public class DistinctDecorator<T> extends SmartArrayDecorator<T> {
 
     public DistinctDecorator(SmartArray<T> smartArray) {
-        super(smartArray);
-        HashSet<Object> hashSet = new LinkedHashSet<>(Arrays.asList(smartArray.toArray()));
+        HashSet<Object> hashSet = new LinkedHashSet<>(
+                Arrays.asList(smartArray.toArray()));
         this.array = hashSet.toArray();
     }
 

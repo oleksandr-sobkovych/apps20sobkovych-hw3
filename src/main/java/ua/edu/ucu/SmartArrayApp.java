@@ -4,9 +4,17 @@ import java.util.Arrays;
 import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
-import ua.edu.ucu.smartarr.*;
+import ua.edu.ucu.smartarr.BaseArray;
+import ua.edu.ucu.smartarr.SmartArray;
+import ua.edu.ucu.smartarr.FilterDecorator;
+import ua.edu.ucu.smartarr.MapDecorator;
+import ua.edu.ucu.smartarr.DistinctDecorator;
+import ua.edu.ucu.smartarr.SortDecorator;
+
 
 public class SmartArrayApp {
+    private static final int MINGPA = 4;
+    private static final int YEAR = 2;
 
     public static Integer[]
             filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
@@ -56,14 +64,16 @@ public class SmartArrayApp {
             @Override
             public boolean test(Object t) {
                 Student student = (Student) t;
-                return student.getGPA() >= 4 && student.getYear() == 2;
+                // in tests requires >=
+                return student.getGPA() >= MINGPA && student.getYear() == YEAR;
             }
         };
 
         MyComparator cmp = new MyComparator() {
             @Override
             public int compare(Object o1, Object o2) {
-                return ((Student) o1).getSurname().compareTo(((Student) o2).getSurname());
+                return ((Student) o1).getSurname().compareTo(
+                        ((Student) o2).getSurname());
             }
         };
 
